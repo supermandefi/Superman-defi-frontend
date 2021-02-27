@@ -49,11 +49,15 @@ const config: MenuEntry[] = [
     label: 'Info',
     icon: 'InfoIcon',
     items: [
+      {
+        label: 'PancakeSwap',
+        href: 'https://pancakeswap.info/token/0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
+      },
+      {
+        label: 'BscScan',
+        href: 'https://bscscan.com',
+      },
       // {
-      //   label: 'PancakeSwap',
-      //   href: 'https://pancakeswap.info/token/0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
-      // },
-      // // {
       //   label: 'CoinGecko',
       //   href: 'https://www.coingecko.com/en/coins/goose-finance',
       // },
@@ -71,10 +75,10 @@ const config: MenuEntry[] = [
     label: 'More',
     icon: 'MoreIcon',
     items: [
-      // {
-      //   label: 'Github',
-      //   href: 'https://github.com/goosedefi/',
-      // },
+      {
+        label: 'Github',
+        href: 'https://github.com/PikachuDefi/',
+      },
       // // {
       //   label: 'Docs',
       //   href: 'https://goosedefi.gitbook.io/goose-finance/',
