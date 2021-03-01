@@ -8,12 +8,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'PIKACHU-BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019',
+      56: '0x45b604027262cca499519ef66ed768c43211e0cf',
     },
     tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0xf952fc3ca7325cc27d15885d37117676d25bfda6',
+      56: '0xd592dfe9e1b687b1d9dbdacf5b9f0789cc9cd584',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -24,12 +24,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'PIKACHU-BNB LP',
     lpAddresses: {
       97: '',
-      56: '0xd1b59d11316e87c3a0a069e80f590ba35cd8d8d3',
+      56: '0x5c2e3fde2a19abb72f6d43d9a8c0940f7d89af20',
     },
     tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0xf952fc3ca7325cc27d15885d37117676d25bfda6',
+      56: '0xd592dfe9e1b687b1d9dbdacf5b9f0789cc9cd584',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
@@ -201,12 +201,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'PIKACHU',
     lpAddresses: {
       97: '',
-      56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019', // PIKACHU-BUSD LP
+      56: '0x45b604027262cca499519ef66ed768c43211e0cf', // PIKACHU-BUSD LP
     },
     tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0xf952fc3ca7325cc27d15885d37117676d25bfda6',
+      56: '0xd592dfe9e1b687b1d9dbdacf5b9f0789cc9cd584',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -218,7 +218,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'BUSD',
     lpAddresses: {
       97: '',
-      56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019', // PIKACHU-BUSD LP (BUSD-BUSD will ignore)
+      56: '0x45b604027262cca499519ef66ed768c43211e0cf', // PIKACHU-BUSD LP (BUSD-BUSD will ignore)
     },
     tokenSymbol: 'BUSD',
     tokenAddresses: {
