@@ -65,11 +65,7 @@ const config: MenuEntry[] = [
       //   label: 'CoinMarketCap',
       //   href: 'https://coinmarketcap.com/currencies/goose-finance/',
       // },
-      // // {
-      //   label: 'AstroTools',
-      //   href: 'https://app.astrotools.io/pancake-pair-explorer/0x19e7cbecdd23a16dfa5573df54d98f7caae03019',
-      // },
-    ], //
+    ],
   },
   {
     label: 'More',
@@ -79,15 +75,15 @@ const config: MenuEntry[] = [
         label: 'Github',
         href: 'https://github.com/PikachuDefi/',
       },
-      // // {
-      //   label: 'Docs',
-      //   href: 'https://goosedefi.gitbook.io/goose-finance/',
-      // },
-      // // {
+      {
+        label: 'Wiki',
+        href: 'https://github.com/PikachuDefi/pikachu-contracts/wiki',
+      },
+      // {
       //   label: 'Blog',
       //   href: 'https://goosefinance.medium.com/',
       // },
-    ], //
+    ],
   },
   // {
   //   label: 'Audit by Hacken',
