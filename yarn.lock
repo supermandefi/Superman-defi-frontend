@@ -1828,9 +1828,9 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@pancakeswap-libs/uikit@pikachudefi/pikachu-uikit":
+"@pancakeswap-libs/uikit@PikachuDefi/pikachu-uikit":
   version "0.10.2"
-  resolved "https://codeload.github.com/pikachudefi/pikachu-uikit/tar.gz/19878e43d0860e2e18c1d94ad4249fcaa22b12ff"
+  resolved "https://codeload.github.com/PikachuDefi/pikachu-uikit/tar.gz/9ba714022de2ece76a864c8759a8fcee7759c4b9"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"
