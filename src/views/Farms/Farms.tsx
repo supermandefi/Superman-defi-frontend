@@ -1,19 +1,19 @@
-import React, { useEffect, useCallback, useState } from 'react'
-import { Route, useRouteMatch } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import React, {useEffect, useCallback, useState} from 'react'
+import {Route, useRouteMatch} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
 import BigNumber from 'bignumber.js'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { provider } from 'web3-core'
-import { Image, Heading } from '@pancakeswap-libs/uikit'
-import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID } from 'config'
+import {useWallet} from '@binance-chain/bsc-use-wallet'
+import {provider} from 'web3-core'
+import {Image, Heading} from '@pancakeswap-libs/uikit'
+import {BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID} from 'config'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
+import {useFarms, usePriceBnbBusd, usePriceCakeBusd} from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
-import { fetchFarmUserDataAsync } from 'state/actions'
-import { QuoteToken } from 'config/constants/types'
+import {fetchFarmUserDataAsync} from 'state/actions'
+import {QuoteToken} from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
-import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
+import FarmCard, {FarmWithStakedValue} from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
 import Divider from './components/Divider'
 
@@ -22,16 +22,16 @@ export interface FarmsProps {
 }
 
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
-  const { path } = useRouteMatch()
+  const {path} = useRouteMatch()
   const TranslateString = useI18n()
   const farmsLP = useFarms()
   const cakePrice = usePriceCakeBusd()
   const bnbPrice = usePriceBnbBusd()
-  const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
-  const { tokenMode } = farmsProps
+  const {account, ethereum}: {account: string; ethereum: provider} = useWallet()
+  const {tokenMode} = farmsProps
 
   const dispatch = useDispatch()
-  const { fastRefresh } = useRefresh()
+  const {fastRefresh} = useRefresh()
   useEffect(() => {
     if (account) {
       dispatch(fetchFarmUserDataAsync(account))
@@ -74,7 +74,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           apy = apy.div(totalValue)
         }
 
-        return { ...farm, apy }
+        return {...farm, apy}
       })
       return farmsToDisplayWithAPY.map((farm) => (
         <FarmCard
@@ -93,13 +93,16 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   return (
     <Page>
-      <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+      <Heading as="h1" size="lg" color="secondary" mb="40px" style={{textAlign: 'center', fontSize: 35}}>
         {tokenMode
-          ? TranslateString(10002, 'Stake tokens to earn PIKACHU')
-          : TranslateString(320, 'Stake LP tokens to earn PIKACHU')}
+          ? TranslateString(10002, 'Stake tokens to earn TAKO')
+          : TranslateString(320, 'Stake LP tokens to earn TAKO')}
       </Heading>
-      <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback PIKACHU')}
+      <Heading as="h4" mb="10px" style={{textAlign: 'center'}}>
+        {TranslateString(10000, 'Deposit Fee will be used to buyback TAKO')}
+      </Heading>
+      <Heading as="h4" mb="30px" style={{textAlign: 'center'}}>
+        {TranslateString(10006, 'Deposit Fee will be used to buyback TAKO')}
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>

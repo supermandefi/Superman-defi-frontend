@@ -1,6 +1,6 @@
-import React, { lazy, Suspense, useContext } from 'react'
+import React, {lazy, Suspense, useContext} from 'react'
 import styled from 'styled-components'
-import { Text } from '@pancakeswap-libs/uikit'
+import {Text} from '@pancakeswap-libs/uikit'
 import PastLotteryDataContext from 'contexts/PastLotteryDataContext'
 import Loading from '../Loading'
 
@@ -15,7 +15,7 @@ const InnerWrapper = styled.div`
 `
 
 const HistoryChart: React.FC = () => {
-  const { historyData, historyError } = useContext(PastLotteryDataContext)
+  const {historyData, historyError} = useContext(PastLotteryDataContext)
   const getDataArray = (kind) => {
     return historyData
       .map((dataPoint) => {
@@ -24,7 +24,7 @@ const HistoryChart: React.FC = () => {
       .reverse()
   }
 
-  const lineStyles = ({ color }) => {
+  const lineStyles = ({color}) => {
     return {
       borderColor: color,
       fill: false,
@@ -41,23 +41,23 @@ const HistoryChart: React.FC = () => {
         label: 'Pool Size',
         data: getDataArray('poolSize'),
         yAxisID: 'y-axis-pool',
-        ...lineStyles({ color: '#8F80BA' }),
+        ...lineStyles({color: '#8F80BA'}),
       },
       {
         label: 'Burned',
         data: getDataArray('burned'),
         yAxisID: 'y-axis-burned',
-        ...lineStyles({ color: '#1FC7D4' }),
+        ...lineStyles({color: '#1FC7D4'}),
       },
     ],
   }
 
-  const axesStyles = ({ color, lineHeight }) => {
+  const axesStyles = ({color, lineHeight}) => {
     return {
       borderCapStyle: 'round',
-      gridLines: { display: false },
+      gridLines: {display: false},
       ticks: {
-        fontFamily: 'Kanit, sans-serif',
+        fontFamily: 'M PLUS Rounded 1c, sans-serif',
         fontColor: color,
         fontSize: 14,
         lineHeight,
@@ -72,7 +72,7 @@ const HistoryChart: React.FC = () => {
   }
 
   const options = {
-    legend: { display: false },
+    legend: {display: false},
     scales: {
       yAxes: [
         {
@@ -80,19 +80,19 @@ const HistoryChart: React.FC = () => {
           display: true,
           position: 'left',
           id: 'y-axis-pool',
-          ...axesStyles({ color: '#8f80ba', lineHeight: 1.6 }),
+          ...axesStyles({color: '#8f80ba', lineHeight: 1.6}),
         },
         {
           type: 'linear',
           display: true,
           position: 'right',
           id: 'y-axis-burned',
-          ...axesStyles({ color: '#1FC7D4', lineHeight: 1.5 }),
+          ...axesStyles({color: '#1FC7D4', lineHeight: 1.5}),
         },
       ],
       xAxes: [
         {
-          ...axesStyles({ color: '#452A7A', lineHeight: 1 }),
+          ...axesStyles({color: '#452A7A', lineHeight: 1}),
         },
       ],
     },
@@ -110,10 +110,10 @@ const HistoryChart: React.FC = () => {
           <Line data={chartData} options={options} type="line" />
         </Suspense>
       ) : (
-        <InnerWrapper>
-          <Loading />
-        </InnerWrapper>
-      )}
+          <InnerWrapper>
+            <Loading />
+          </InnerWrapper>
+        )}
     </>
   )
 }

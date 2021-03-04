@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { allLanguages } from 'config/localisation/languageCodes'
-import { LanguageContext } from 'contexts/Localisation/languageContext'
+import React, {useContext} from 'react'
+import {useWallet} from '@binance-chain/bsc-use-wallet'
+import {allLanguages} from 'config/localisation/languageCodes'
+import {LanguageContext} from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
-import { usePriceCakeBusd } from 'state/hooks'
-import { Menu as UikitMenu } from '@pancakeswap-libs/uikit'
+import {usePriceCakeBusd} from 'state/hooks'
+import {Menu as UikitMenu} from '@pancakeswap-libs/uikit'
 import config from './config'
 
 const Menu = (props) => {
-  const { account, connect, reset } = useWallet()
-  const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
-  const { isDark, toggleTheme } = useTheme()
+  const {account, connect, reset} = useWallet()
+  const {selectedLanguage, setSelectedLanguage} = useContext(LanguageContext)
+  const {isDark, toggleTheme} = useTheme()
   const cakePriceUsd = usePriceCakeBusd()
 
   return (
@@ -25,7 +25,7 @@ const Menu = (props) => {
       setLang={setSelectedLanguage}
       cakePriceUsd={cakePriceUsd.toNumber()}
       links={config}
-      priceLink="https://bscscan.com/address/0xd592dfe9e1b687b1d9dbdacf5b9f0789cc9cd584"
+      priceLink="https://bscscan.com/address/"
       {...props}
     />
   )

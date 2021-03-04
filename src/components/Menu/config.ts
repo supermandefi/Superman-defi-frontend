@@ -1,4 +1,4 @@
-import { MenuEntry } from '@pancakeswap-libs/uikit'
+import {MenuEntry} from '@pancakeswap-libs/uikit'
 
 const config: MenuEntry[] = [
   {
@@ -12,23 +12,28 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.pikachudefi.com/',
+        href: 'https://exchange.takoyaki.finance/',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.pikachudefi.com/#/pool',
+        href: 'https://exchange.takoyaki.finance/#/pool',
       },
     ],
   },
   {
-    label: 'Farms',
-    icon: 'FarmIcon',
-    href: '/farms',
+    label: 'Restaurants',
+    icon: 'TicketIcon',
+    href: '/restaurants',
   },
   {
-    label: 'Staking',
+    label: 'Stands',
     icon: 'PoolIcon',
-    href: '/nests',
+    href: '/stands',
+  },
+  {
+    label: 'Presale',
+    icon: 'IfoIcon',
+    href: '/ifo',
   },
   // {
   //   label: 'Pools',
@@ -51,11 +56,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'PancakeSwap',
-        href: 'https://pancakeswap.info/token/0xd592dfe9e1b687b1d9dbdacf5b9f0789cc9cd584',
+        href: 'https://pancakeswap.info/token/',
       },
       {
         label: 'BscScan',
-        href: 'https://bscscan.com/address/0xd592dfe9e1b687b1d9dbdacf5b9f0789cc9cd584',
+        href: 'https://bscscan.com/address/',
       },
       // {
       //   label: 'CoinGecko',
@@ -73,11 +78,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/PikachuDefi/',
+        href: 'https://github.com/takoyakidefi/',
       },
       {
         label: 'Wiki',
-        href: 'https://github.com/PikachuDefi/pikachu-contracts/wiki',
+        href: 'https://github.com/takoyakidefi/',
       },
       // {
       //   label: 'Blog',

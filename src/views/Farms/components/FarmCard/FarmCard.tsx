@@ -1,13 +1,13 @@
-import React, { useMemo, useState } from 'react'
+import React, {useMemo, useState} from 'react'
 import BigNumber from 'bignumber.js'
-import styled, { keyframes } from 'styled-components'
-import { Flex, Text, Skeleton } from '@pancakeswap-libs/uikit'
-import { communityFarms } from 'config/constants'
-import { Farm } from 'state/types'
-import { provider } from 'web3-core'
+import styled, {keyframes} from 'styled-components'
+import {Flex, Text, Skeleton} from '@pancakeswap-libs/uikit'
+import {communityFarms} from 'config/constants'
+import {Farm} from 'state/types'
+import {provider} from 'web3-core'
 import useI18n from 'hooks/useI18n'
 import ExpandableSectionButton from 'components/ExpandableSectionButton'
-import { QuoteToken } from 'config/constants/types'
+import {QuoteToken} from 'config/constants/types'
 import DetailsSection from './DetailsSection'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
@@ -70,13 +70,13 @@ const FCard = styled.div`
 `
 
 const Divider = styled.div`
-  background-color: ${({ theme }) => theme.colors.borderColor};
+  background-color: ${({theme}) => theme.colors.borderColor};
   height: 1px;
   margin: 28px auto;
   width: 100%;
 `
 
-const ExpandingWrapper = styled.div<{ expanded: boolean }>`
+const ExpandingWrapper = styled.div<{expanded: boolean}>`
   height: ${(props) => (props.expanded ? '100%' : '0px')};
   overflow: hidden;
 `
@@ -90,7 +90,7 @@ interface FarmCardProps {
   account?: string
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethereum, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({farm, removed, cakePrice, bnbPrice, ethereum, account}) => {
   const TranslateString = useI18n()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
@@ -117,11 +117,11 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
 
   const totalValueFormated = totalValue
-    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
+    ? `$${Number(totalValue).toLocaleString(undefined, {maximumFractionDigits: 0})}`
     : '-'
 
   const lpLabel = farm.lpSymbol
-  const earnLabel = 'PIKACHU'
+  const earnLabel = 'TAKO'
   const farmAPY =
     farm.apy &&
     farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
@@ -129,11 +129,11 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
       maximumFractionDigits: 2,
     })
 
-  const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
+  const {quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk} = farm
 
   return (
     <FCard>
-      {farm.tokenSymbol === 'PIKACHU' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'TAKO' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -145,7 +145,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
       {!removed && (
         <Flex justifyContent="space-between" alignItems="center">
           <Text>{TranslateString(352, 'APR')}:</Text>
-          <Text bold style={{ display: 'flex', alignItems: 'center' }}>
+          <Text bold style={{display: 'flex', alignItems: 'center'}}>
             {farm.apy ? (
               <>
                 <ApyButton
@@ -159,8 +159,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
                 {farmAPY}%
               </>
             ) : (
-              <Skeleton height={24} width={80} />
-            )}
+                <Skeleton height={24} width={80} />
+              )}
           </Text>
         </Flex>
       )}
@@ -169,8 +169,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         <Text bold>{earnLabel}</Text>
       </Flex>
       <Flex justifyContent="space-between">
-        <Text style={{ fontSize: '24px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
-        <Text bold style={{ fontSize: '24px' }}>
+        <Text style={{fontSize: '24px'}}>{TranslateString(10001, 'Deposit Fee')}:</Text>
+        <Text bold style={{fontSize: '24px'}}>
           {farm.depositFeeBP / 100}%
         </Text>
       </Flex>

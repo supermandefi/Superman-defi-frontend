@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, BaseLayout } from '@pancakeswap-libs/uikit'
+import {Heading, Text, BaseLayout} from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import FarmStakingCard from './components/FarmStakingCard'
@@ -22,7 +22,7 @@ const Hero = styled.div`
   padding-top: 116px;
   text-align: center;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({theme}) => theme.mediaQueries.lg} {
     background-image: url('/images/egg/3.png'), url('/images/egg/3b.png');
     background-position: left center, right center;
     height: 165px;
@@ -40,13 +40,13 @@ const Cards = styled(BaseLayout)`
     width: 100%;
   }
 
-  ${({ theme }) => theme.mediaQueries.sm} {
+  ${({theme}) => theme.mediaQueries.sm} {
     & > div {
       grid-column: span 8;
     }
   }
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({theme}) => theme.mediaQueries.lg} {
     & > div {
       grid-column: span 6;
     }
@@ -59,10 +59,11 @@ const Home: React.FC = () => {
   return (
     <Page>
       <Hero>
-        <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'Pikachu Finance')}
+        <Heading as="h1" size="xl" mb="24px" color="secondary" style={{fontSize: 50}}>
+          {TranslateString(576, 'Takoyaki Finance')}
         </Heading>
-        <Text>{TranslateString(578, "The only yield farm for Pikachu's on there way to the Moon.")}</Text>
+        <Text>{TranslateString(578, "Irasshaimase! Welcome to Takoyaki Stand!.")}</Text>
+        <Text>タコヤキファイナンス、ようこそ！</Text>
       </Hero>
       <div>
         <Cards>

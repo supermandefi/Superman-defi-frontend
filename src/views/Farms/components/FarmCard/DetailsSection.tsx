@@ -1,9 +1,9 @@
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
-import { Text, Flex, Link, LinkExternal } from '@pancakeswap-libs/uikit'
+import {Text, Flex, Link, LinkExternal} from '@pancakeswap-libs/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { Address } from 'config/constants/types'
+import {Address} from 'config/constants/types'
 
 export interface ExpandableSectionProps {
   isTokenOnly?: boolean
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 const StyledLinkExternal = styled(LinkExternal)`
   text-decoration: none;
   font-weight: normal;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({theme}) => theme.colors.text};
   display: flex;
   align-items: center;
 
@@ -31,7 +31,7 @@ const StyledLinkExternal = styled(LinkExternal)`
     padding-left: 4px;
     height: 18px;
     width: auto;
-    fill: ${({ theme }) => theme.colors.primary};
+    fill: ${({theme}) => theme.colors.primary};
   }
 `
 
@@ -46,7 +46,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
   tokenAddresses,
 }) => {
   const TranslateString = useI18n()
-  const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
+  const liquidityUrlPathParts = getLiquidityUrlPathParts({quoteTokenAdresses, quoteTokenSymbol, tokenAddresses})
 
   return (
     <Wrapper>
@@ -55,8 +55,8 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         <StyledLinkExternal
           href={
             isTokenOnly
-              ? `https://exchange.pikachudefi.com/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
-              : `https://exchange.pikachudefi.com/#/add/${liquidityUrlPathParts}`
+              ? `https://exchange.takoyaki.finance/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              : `https://exchange.takoyaki.finance/#/add/${liquidityUrlPathParts}`
           }
         >
           {lpLabel}

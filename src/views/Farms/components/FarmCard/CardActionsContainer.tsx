@@ -1,14 +1,14 @@
-import React, { useMemo, useState, useCallback } from 'react'
+import React, {useMemo, useState, useCallback} from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
-import { provider } from 'web3-core'
-import { getContract } from 'utils/erc20'
-import { Button, Flex, Text } from '@pancakeswap-libs/uikit'
-import { Farm } from 'state/types'
-import { useFarmFromPid, useFarmFromSymbol, useFarmUser } from 'state/hooks'
+import {provider} from 'web3-core'
+import {getContract} from 'utils/erc20'
+import {Button, Flex, Text} from '@pancakeswap-libs/uikit'
+import {Farm} from 'state/types'
+import {useFarmFromPid, useFarmFromSymbol, useFarmUser} from 'state/hooks'
 import useI18n from 'hooks/useI18n'
 import UnlockButton from 'components/UnlockButton'
-import { useApprove } from 'hooks/useApprove'
+import {useApprove} from 'hooks/useApprove'
 import StakeAction from './StakeAction'
 import HarvestAction from './HarvestAction'
 
@@ -25,11 +25,11 @@ interface FarmCardActionsProps {
   account?: string
 }
 
-const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }) => {
+const CardActions: React.FC<FarmCardActionsProps> = ({farm, ethereum, account}) => {
   const TranslateString = useI18n()
   const [requestedApproval, setRequestedApproval] = useState(false)
-  const { pid, lpAddresses, tokenAddresses, isTokenOnly, depositFeeBP } = useFarmFromPid(farm.pid)
-  const { allowance, tokenBalance, stakedBalance, earnings } = useFarmUser(pid)
+  const {pid, lpAddresses, tokenAddresses, isTokenOnly, depositFeeBP} = useFarmFromPid(farm.pid)
+  const {allowance, tokenBalance, stakedBalance, earnings} = useFarmUser(pid)
   const lpAddress = lpAddresses[process.env.REACT_APP_CHAIN_ID]
   const tokenAddress = tokenAddresses[process.env.REACT_APP_CHAIN_ID]
   const lpName = farm.lpSymbol.toUpperCase()
@@ -42,7 +42,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
     return getContract(ethereum as provider, lpAddress)
   }, [ethereum, lpAddress, tokenAddress, isTokenOnly])
 
-  const { onApprove } = useApprove(lpContract)
+  const {onApprove} = useApprove(lpContract)
 
   const handleApprove = useCallback(async () => {
     try {
@@ -64,10 +64,10 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
         depositFeeBP={depositFeeBP}
       />
     ) : (
-      <Button mt="8px" fullWidth disabled={requestedApproval} onClick={handleApprove}>
-        {TranslateString(999, 'Approve Contract')}
-      </Button>
-    )
+        <Button mt="8px" fullWidth disabled={requestedApproval} onClick={handleApprove}>
+          {TranslateString(999, 'Approve Contract')}
+        </Button>
+      )
   }
 
   return (
@@ -75,7 +75,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
       <Flex>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="3px">
           {/* TODO: Is there a way to get a dynamic value here from useFarmFromSymbol? */}
-          PIKACHU
+          TAKO
         </Text>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {TranslateString(999, 'Earned')}

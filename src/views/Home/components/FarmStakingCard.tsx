@@ -1,19 +1,19 @@
-import React, { useState, useCallback } from 'react'
+import React, {useState, useCallback} from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button } from '@pancakeswap-libs/uikit'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
+import {Heading, Card, CardBody, Button} from '@pancakeswap-libs/uikit'
+import {useWallet} from '@binance-chain/bsc-use-wallet'
 import BigNumber from 'bignumber.js'
 import useI18n from 'hooks/useI18n'
-import { useAllHarvest } from 'hooks/useHarvest'
+import {useAllHarvest} from 'hooks/useHarvest'
 import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
-import { usePriceCakeBusd } from '../../../state/hooks'
+import {usePriceCakeBusd} from '../../../state/hooks'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import { getCakeAddress } from '../../../utils/addressHelpers'
+import {getCakeAddress} from '../../../utils/addressHelpers'
 import useAllEarnings from '../../../hooks/useAllEarnings'
-import { getBalanceNumber } from '../../../utils/formatBalance'
+import {getBalanceNumber} from '../../../utils/formatBalance'
 
 const StyledFarmStakingCard = styled(Card)`
   background-image: url('/images/egg/2a.png');
@@ -31,7 +31,7 @@ const CardImage = styled.img`
 `
 
 const Label = styled.div`
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: ${({theme}) => theme.colors.textSubtle};
   font-size: 14px;
 `
 
@@ -41,7 +41,7 @@ const Actions = styled.div`
 
 const FarmedStakingCard = () => {
   const [pendingTx, setPendingTx] = useState(false)
-  const { account } = useWallet()
+  const {account} = useWallet()
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
   const cakeBalance = getBalanceNumber(useTokenBalance(getCakeAddress()))
@@ -52,7 +52,7 @@ const FarmedStakingCard = () => {
   }, 0)
   const balancesWithValue = farmsWithBalance.filter((balanceType) => balanceType.balance.toNumber() > 0)
 
-  const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
+  const {onReward} = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
 
   const harvestAllFarms = useCallback(async () => {
     setPendingTx(true)
@@ -73,12 +73,12 @@ const FarmedStakingCard = () => {
         </Heading>
         <CardImage src="/images/egg/2.png" alt="cake logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'PIKACHU to Harvest')}</Label>
+          <Label>{TranslateString(544, 'TAKO to Harvest')}</Label>
           <CakeHarvestBalance earningsSum={earningsSum} />
           <Label>~${(eggPrice * earningsSum).toFixed(2)}</Label>
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'PIKACHU in Wallet')}</Label>
+          <Label>{TranslateString(546, 'TAKO in Wallet')}</Label>
           <CakeWalletBalance cakeBalance={cakeBalance} />
           <Label>~${(eggPrice * cakeBalance).toFixed(2)}</Label>
         </Block>
@@ -91,12 +91,12 @@ const FarmedStakingCard = () => {
               fullWidth
             >
               {pendingTx
-                ? TranslateString(548, 'Collecting PIKACHU')
+                ? TranslateString(548, 'Collecting TAKO')
                 : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
             </Button>
           ) : (
-            <UnlockButton fullWidth />
-          )}
+              <UnlockButton fullWidth />
+            )}
         </Actions>
       </CardBody>
     </StyledFarmStakingCard>
