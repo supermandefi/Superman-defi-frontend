@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useRouteMatch, Link } from 'react-router-dom'
-import { ButtonMenu, ButtonMenuItem } from '@pancakeswap-libs/uikit'
+import {useRouteMatch, Link} from 'react-router-dom'
+import {ButtonMenu, ButtonMenuItem} from '@pancakeswap-libs/uikit'
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `
 
 const IfoTabButtons = () => {
-  const { url, isExact } = useRouteMatch()
+  const {url, isExact} = useRouteMatch()
 
   return (
     <Wrapper>

@@ -2,9 +2,9 @@ import BigNumber from 'bignumber.js'
 import erc20 from 'config/abi/erc20.json'
 import masterchefABI from 'config/abi/masterchef.json'
 import multicall from 'utils/multicall'
-import { getMasterChefAddress } from 'utils/addressHelpers'
+import {getMasterChefAddress} from 'utils/addressHelpers'
 import farmsConfig from 'config/constants/farms'
-import { QuoteToken } from '../../config/constants/types'
+import {QuoteToken} from '../../config/constants/types'
 
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
@@ -103,7 +103,7 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'eggPerBlock',
+          name: 'takoyakiPerBlock',
         },
       ])
 

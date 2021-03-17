@@ -1830,7 +1830,7 @@
 
 "@pancakeswap-libs/uikit@takoyakidefi/takoyaki-uikit":
   version "0.10.2"
-  resolved "https://codeload.github.com/takoyakidefi/takoyaki-uikit/tar.gz/ff858beb8a34b35b77f1b53eb5c8fb6dc07057a6"
+  resolved "https://codeload.github.com/takoyakidefi/takoyaki-uikit/tar.gz/72a8081ffba3986305fdc81af154b64b8af0ae49"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

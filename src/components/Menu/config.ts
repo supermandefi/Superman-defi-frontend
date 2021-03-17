@@ -12,28 +12,23 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.takoyaki.finance/',
+        href: 'https://exchange.takoyakidefi.com/',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.takoyaki.finance/#/pool',
+        href: 'https://exchange.takoyakidefi.com/#/pool',
       },
     ],
   },
   {
     label: 'Restaurants',
-    icon: 'TicketIcon',
+    icon: 'TakoyakiIcon',
     href: '/restaurants',
   },
   {
     label: 'Stands',
     icon: 'PoolIcon',
     href: '/stands',
-  },
-  {
-    label: 'Presale',
-    icon: 'IfoIcon',
-    href: '/ifo',
   },
   // {
   //   label: 'Pools',
@@ -56,12 +51,12 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'PancakeSwap',
-        href: 'https://pancakeswap.info/token/',
+        href: 'https://pancakeswap.info/token/0x440676a18d9792215500b1bc06341eb169e6e74b',
       },
-      {
-        label: 'BscScan',
-        href: 'https://bscscan.com/address/',
-      },
+      //  {
+      //  label: 'BscScan',
+      //  href: 'https://bscscan.com/address/',
+      //  },
       // {
       //   label: 'CoinGecko',
       //   href: 'https://www.coingecko.com/en/coins/goose-finance',
@@ -81,13 +76,13 @@ const config: MenuEntry[] = [
         href: 'https://github.com/takoyakidefi/',
       },
       {
-        label: 'Wiki',
-        href: 'https://github.com/takoyakidefi/',
+        label: 'Docs',
+        href: 'https://docs.takoyakidefi.com',
       },
-      // {
-      //   label: 'Blog',
-      //   href: 'https://goosefinance.medium.com/',
-      // },
+      {
+        label: 'Blog',
+        href: 'https://medium.com/@takoyakidefi',
+      },
     ],
   },
   // {
@@ -95,11 +90,16 @@ const config: MenuEntry[] = [
   //   icon: 'AuditIcon',
   //   href: 'https://www.goosedefi.com/files/hackenAudit.pdf',
   // },
-  // {
-  //   label: 'Audit by CertiK',
-  //   icon: 'AuditIcon',
-  //   href: 'https://certik.org/projects/goose-finance',
-  // },
+  {
+    label: 'Road Map',
+    icon: 'RoadmapIcon',
+    href: 'https://docs.takoyakidefi.com/road-map',
+  },
+  {
+    label: 'Audit by TechRate',
+    icon: 'AuditIcon',
+    href: 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/Takoyaki%20Finance.pdf',
+  },
 ]
 
 export default config

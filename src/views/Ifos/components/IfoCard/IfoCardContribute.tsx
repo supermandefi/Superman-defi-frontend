@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { useModal, Button, Text } from '@pancakeswap-libs/uikit'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
+import React, {useState, useEffect} from 'react'
+import {useModal, Button, Text} from '@pancakeswap-libs/uikit'
+import {useWallet} from '@binance-chain/bsc-use-wallet'
 import BigNumber from 'bignumber.js'
-import { Contract } from 'web3-eth-contract'
-import { useERC20 } from 'hooks/useContract'
-import { useIfoAllowance } from 'hooks/useAllowance'
-import { useIfoApprove } from 'hooks/useApprove'
-import { IfoStatus } from 'config/constants/types'
-import { getBalanceNumber } from 'utils/formatBalance'
+import {Contract} from 'web3-eth-contract'
+import {useERC20} from 'hooks/useContract'
+import {useIfoAllowance} from 'hooks/useAllowance'
+import {useIfoApprove} from 'hooks/useApprove'
+import {IfoStatus} from 'config/constants/types'
+import {getBalanceNumber} from 'utils/formatBalance'
 import LabelButton from './LabelButton'
 import ContributeModal from './ContributeModal'
 
@@ -32,9 +32,9 @@ const IfoCardContribute: React.FC<Props> = ({
 }) => {
   const [pendingTx, setPendingTx] = useState(false)
   const [offeringTokenBalance, setOfferingTokenBalance] = useState(new BigNumber(0))
-  const [userInfo, setUserInfo] = useState({ amount: 0, claimed: false })
+  const [userInfo, setUserInfo] = useState({amount: 0, claimed: false})
 
-  const { account } = useWallet()
+  const {account} = useWallet()
   const contractRaisingToken = useERC20(currencyAddress)
   const allowance = useIfoAllowance(contractRaisingToken, address, pendingTx)
   const onApprove = useIfoApprove(contractRaisingToken, address)
@@ -62,11 +62,15 @@ const IfoCardContribute: React.FC<Props> = ({
 
   const claim = async () => {
     setPendingTx(true)
-    await contract.methods.harvest().send({ from: account })
+    await contract.methods.harvest().send({from: account})
     setPendingTx(false)
   }
   const isFinished = status === 'finished'
   const percentOfUserContribution = new BigNumber(userInfo.amount).div(raisingAmount).times(100)
+
+  if (allowance <= 0 && isFinished) {
+    return <></>
+  }
 
   if (allowance <= 0) {
     return (
