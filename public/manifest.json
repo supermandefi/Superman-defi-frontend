@@ -1,10 +1,10 @@
 {
-  "short_name": "TakoFinance",
-  "name": "Takoyaki Finance",
+  "short_name": "SUPERMAN Finance",
+  "name": "SUPER Finance",
   "description": "Farm TAKO with LP Tokens",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "superman.ico",
       "type": "image/x-icon",
       "sizes": "256x256"
     }
