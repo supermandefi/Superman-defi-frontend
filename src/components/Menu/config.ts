@@ -12,16 +12,16 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.takoyakidefi.com/',
+        href: 'https://exchange.pancakeswap.finance/#/swap',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.takoyakidefi.com/#/pool',
+        href: 'https://exchange.pancakeswap.finance/#/pool',
       },
     ],
   },
   {
-    label: 'Restaurants',
+    label: 'Krypton',
     icon: 'TakoyakiIcon',
     href: '/restaurants',
   },
@@ -51,7 +51,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'PancakeSwap',
-        href: 'https://pancakeswap.info/token/0x440676a18d9792215500b1bc06341eb169e6e74b',
+        href: 'https://pancakeswap.info/token/0xe9e7cea3dedca5984780bafc599bd69add087d56',
       },
       //  {
       //  label: 'BscScan',
