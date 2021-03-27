@@ -13,7 +13,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0x440676a18d9792215500b1bc06341eb169e6e74b',
+      56: '0x471C00DeD0cBd8B77fd0f102b1a9d84E539BFFd2',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -29,7 +29,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0x440676a18d9792215500b1bc06341eb169e6e74b',
+      56: '0x471C00DeD0cBd8B77fd0f102b1a9d84E539BFFd2',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
@@ -94,7 +94,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0x440676a18d9792215500b1bc06341eb169e6e74b',
+      56: '0x471C00DeD0cBd8B77fd0f102b1a9d84E539BFFd2',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
