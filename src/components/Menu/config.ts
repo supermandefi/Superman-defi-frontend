@@ -21,7 +21,7 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'Restaurants',
+    label: 'Krypton',
     icon: 'TakoyakiIcon',
     href: '/restaurants',
   },
